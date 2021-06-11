@@ -1,17 +1,12 @@
-@function rnd-rot($turns) {
-  @return random($turns * 20) / 10 - $turns;
+@use 'sass:math';
+
+$letters: 7;
+
+@function rnd-range($abs) {
+  @return math.div(random($abs * 20), 10) - $abs;
 }
 
-$letters:
-  0 0 0,
-  1 0 0,
-  2 0 0,
-  3 0 0,
-  4 0 0,
-  5 0 0,
-  6 0 0;
-
-@each $i, $transl-x, $transl-y in $letters {
+@for $i from 0 to $letters {
 
   .letter-#{$i} {
     animation: 2s letter-#{$i}-appear;
@@ -21,14 +16,17 @@ $letters:
     from {
       opacity: 0;
       transform:
-        translate3d($transl-x, $transl-y, 500px)
-        rotateX(rnd-rot(1) * 360deg)
-        rotateY(rnd-rot(1) * 360deg)
-        rotateZ(rnd-rot(1) * 360deg);
+        translate3d(rnd-range(50) * 1vw, rnd-range(50) * 1vh, 500px)
+        rotateX(rnd-range(1) * 360deg)
+        rotateY(rnd-range(1) * 360deg)
+        rotateZ(rnd-range(2) * 360deg);
+    }
+
+    95% {
+      opacity: 1;
     }
 
     to {
-      opacity: 1;
       transform:
         translate3d(0vw, 0vh, 0)
         rotateX(0deg)
