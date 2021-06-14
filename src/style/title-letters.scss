@@ -16,9 +16,9 @@ $letters: 7;
     from {
       opacity: 0;
       transform:
-        translate3d(rnd-range(50) * 1vw, rnd-range(50) * 1vh, 500px)
-        rotateX(rnd-range(1) * 360deg)
-        rotateY(rnd-range(1) * 360deg)
+        translate3d(rnd-range(30) * 1vw, rnd-range(30) * 1vh, 500px)
+        rotateX(rnd-range(2) * 360deg)
+        rotateY(rnd-range(2) * 360deg)
         rotateZ(rnd-range(2) * 360deg);
     }
 
