@@ -1,0 +1,14 @@
+@mixin fade-in-initial($duration, $delay) {
+  opacity: 0;
+  animation: linear alternate forwards $duration $delay fade-in;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

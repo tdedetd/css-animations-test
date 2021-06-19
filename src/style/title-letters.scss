@@ -1,15 +1,28 @@
-@use 'sass:math';
+@import "./variables.scss";
 
 $letters: 7;
+$letters-color-initial: #79c248;
+$letters-color-dark: #0c1606;
 
-@function rnd-range($abs) {
-  @return math.div(random($abs * 20), 10) - $abs;
+.main-title {
+  color: $letters-color-initial;
+  animation: linear alternate forwards $sunset-duration $sunset-delay dark-anim;
+}
+
+@keyframes dark-anim {
+  0% {
+    color: $letters-color-initial;
+  }
+
+  100% {
+    color: $letters-color-dark;
+  }
 }
 
 @for $i from 0 to $letters {
 
   .letter-#{$i} {
-    animation: 2s letter-#{$i}-appear;
+    animation: $letter-anim-duration letter-#{$i}-appear;
   }
 
   @keyframes letter-#{$i}-appear {

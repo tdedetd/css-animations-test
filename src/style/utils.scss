@@ -1,0 +1,5 @@
+@use "sass:math";
+
+@function rnd-range($abs) {
+  @return math.div(random($abs * 20), 10) - $abs;
+}
