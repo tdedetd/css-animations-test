@@ -30,7 +30,7 @@ body {
   display: flex;
 }
 
-.day, .night {
+.day, .night, .stars {
   position: absolute;
   top: 0;
   left: 0;
@@ -45,4 +45,16 @@ body {
 .night {
   background: $night-gradient;
   @include fade-in-initial($sunset-duration, $sunset-delay);
+}
+
+.stars {
+  @include fade-in-initial($sunset-duration - 0.5s, $sunset-delay + 0.5s);
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  width: 2px;
+  height: 2px;
 }
